@@ -6,7 +6,7 @@
 但是，在JavaScript中并不是没有类的概念。于是有人说，JavaScript是基于对象的语言，而不是面向对象的语言。
 
 ## 面向对象的语言具有三个特性：封装、继承和多态
-### 来看看ES5如何实现
+### ES5 类【书籍中有7种左右模式，本质上3种技术混合】
 * 构造函数模式：【形式最贴近JAVA的模式】 
 function Person (Name,Age,Job) {  
       this.name = Name;    
@@ -41,3 +41,19 @@ person.sayName();
 在这个例子中，实例属性都是在构造函数中定义的，而由所有实例共享的属性 constructor 和方法 sayName()则是在原型中定义的。  
 person1.friends（向其中添加一个新字符串），并不会影响到 person2.friends，因为它们分别引用了不同的数组。  
 这种构造函数与原型混成的模式，是目前在 ECMAScript中使用最广泛、认同度最高的一种创建自定义类型的方法。  
+### 继承 
+* 通过原型链实现  
+function Super(){     
+　　this.property = 'Super Property'       
+}       
+Super.prototype.getProperty = function(){    
+　　return this.property   
+}  
+// 子类  
+function Sub(){    
+　　this.property = 'Sub Property'  
+}    
+Sub.prototype = new Super()    
+Sub.prototype.constructor = Sub   
+   
+
