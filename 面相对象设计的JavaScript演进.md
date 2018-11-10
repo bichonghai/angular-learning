@@ -80,7 +80,7 @@ makeSound( new Duck() ); // 嘎嘎嘎
 makeSound( new Chicken() ); // 咯咯咯   
 javascript是弱类型的语言，因为根本就不需要像java那样引入接口、抽象类，因为只要参数的结构类似，就可以模拟多态。【接口和类就是结构一样】    
 
-## ES6 
+## ES6 【明确了类、继承，定义了let、const等局部变量，但没有定义私有、公有、保护、变量的类型等特性】
 参考网址： http://es6.ruanyifeng.com/#docs/intro  
 2015 年 6 月，ECMAScript 6 正式通过，成为国际标准。从 2000 年算起，这时已经过去了 15 年。  
 ### ES6 提供了更接近传统语言的写法，引入了 Class（类）这个概念，作为对象的模板。通过class关键字，可以定义类。
@@ -123,8 +123,55 @@ class ColorPoint extends Point {
 
 2.ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。
 
-3.ES6的模块案例
+3.ES6的模块案例  
 export { es6 as default } from './someModule'; //模块导入  
 // 等同于
 import { es6 } from './someModule';  
 export default es6;                            //模块导出           
+
+
+## TypeScript 【定义了属性的类型推断、公共，私有与受保护的修饰符、泛型、接口等，一句话越来越像 java】
+TypeSciprt是一门脚本语言，它算是Javascript的增强版，它扩展Javascript的类库，增加了面向对象特性。当然它最大的特点是兼容Javascript，它可以将自己的代码编译成Javascript代码。  
+为什么会有 TypeScript?     
+JavaScript 只是一个脚本语言，并非设计用于开发大型 Web 应用，JavaScript 没有提供类和模块的概念，而 TypeScript 扩展了 JavaScript 实现了这些特性。TypeScript 主要特点包括：  
+
+TypeScript 是微软推出的开源语言，使用 Apache 授权协议  
+TypeScript 是 JavaScript 的超集.   
+TypeScript 增加了可选类型、类和模块  
+TypeScript 可编译成可读的、标准的 JavaScript  
+TypeScript 支持开发大规模 JavaScript 应用  
+TypeScript 设计用于开发大型应用，并保证编译后的 JavaScript 代码兼容性  
+TypeScript 扩展了 JavaScript 的语法，因此已有的 JavaScript 代码可直接与 TypeScript 一起运行无需更改  
+TypeScript 文件扩展名是 ts，而 TypeScript 编译器会编译成 js 文件  
+TypeScript 语法与 JScript .NET 相同  
+TypeScript 易学易于理解  
+语法特性  
+类 Classes  
+接口 Interfaces  
+模块 Modules   
+类型注解 Type annotations  
+编译时类型检查 Compile time type checking   
+Arrow 函数 (类似 C# 的 Lambda 表达式)  
+
+* 定义了基础类型【布尔值 、字符串、枚举、数字、数组、枚举、void  Object
+   https://www.tslang.cn/docs/handbook/basic-types.html  
+* 定义了 公共，私有与受保护的修饰符，更加完善了类的定义 。
+  https://www.tslang.cn/docs/handbook/classes.html  
+* 定义了接口
+  https://www.tslang.cn/docs/handbook/interfaces.html  
+* 定义了泛型
+  https://www.tslang.cn/docs/handbook/generics.html  
+
+### 重点
+1.ES5、ES6 、TypeScript 的过程中，语言越来越像面相对象的语言。  
+2.TypeScript的特性是编译期检查，而不是运行时检查。  
+这个就不难理解，为了TypeScript的程序为啥经过编译后，可以运行在ES5和ES6可以运行的平台上。  
+因为那些语法特性，比如 private、public、基本类型，都是编译时进行检查，就类似于 java---编译为class一样。  
+3.TypeScript是ES6、ES5的子集，也就意味着支持他们的所有语法，这样不是意味着大家还可能继续使用不推荐的语法。   
+ 的确如此    
+4.TSLint 代码规范检查  
+  在编写 JavaScript 代码时，我们可以通过 ESLint 来进行代码规范检查，编写 TypeScript 代码时也可以使用 TSLint，两者在配置上也有些相似。对于初学者来说，使用 TSLint 可以知道哪些程序的写法是不被推荐的，从而养成更好的 TypeScript 代码风格。  
+
+
+
+
