@@ -68,12 +68,12 @@ var makeSound = function(animal) { // 把不变的部分隔离出来
 把可变的部分各自封装起来，每个类型的动物各自封装  
 var Duck = function() {};  
 Duck.prototype.sound = function() {  
-    console.log("嘎嘎嘎");  
+      console.log("嘎嘎嘎");  
 };
 var Chicken = function() {};  
 Chicken.prototype.sound = function() {  
-    console.log("咯咯咯");  
-};
+      console.log("咯咯咯");  
+};  
 makeSound( new Duck() ); // 嘎嘎嘎  
 makeSound( new Chicken() ); // 咯咯咯   
 javascript是弱类型的语言，因为根本就不需要像java那样引入接口、抽象类，因为只要参数的结构类似，就可以模拟多态。【接口和类就是结构一样】    
