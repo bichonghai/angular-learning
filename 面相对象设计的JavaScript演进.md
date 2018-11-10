@@ -172,6 +172,16 @@ Arrow 函数 (类似 C# 的 Lambda 表达式)
 4.TSLint 代码规范检查  
   在编写 JavaScript 代码时，我们可以通过 ESLint 来进行代码规范检查，编写 TypeScript 代码时也可以使用 TSLint，两者在配置上也有些相似。对于初学者来说，使用 TSLint 可以知道哪些程序的写法是不被推荐的，从而养成更好的 TypeScript 代码风格。  
 
+## TypeScript、ES6 的编译
+React项目一般使用Babel进行编译，Angular【不是AngularJS】项目则会使用TSC进行编译。  
+TypeScript、ES6 都是无法直接在大部分浏览器上执行的，必须经过编译转化才能直接运行。  
+TypeScript的编译使用tsc编译器，tsc编译器可以指定最终编译的js的版本。 
+Babel 是一个 JavaScript 编译器，Babel 通过语法变换器支持最新版本的 JavaScript。  
+Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。  
 
+### 几句话概述
+1.TypeScript 最接近面向对象的语言实现   
+2.TypeScript 在支持面相对象特性时，是编译期检查，通过tsc进行编译，具备完整的兼容ES5和ES6的转化。   
+3.TypeScript 开发友好，那些编译期的语法检查，开发工具都直接提醒，避免开发人员的不友好的编码。    
 
 
